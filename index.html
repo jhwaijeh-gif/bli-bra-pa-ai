@@ -113,7 +113,7 @@
   .step p+p{margin-top:10px;}
   /* Telefon: numret ovanför rubriken så att text och bilder får hela bredden (Judes besked 2026-10-13) */
   @media(max-width:640px){
-    .step{grid-template-columns:1fr;gap:12px;padding:26px 0;}
+    .step{grid-template-columns:minmax(0,1fr);gap:12px;padding:26px 0;}
     .step-n{width:30px;height:30px;font-size:13px;}
   }
   .kbd{font-family:var(--mono);font-weight:600;font-size:13px;background:var(--bg);border:1px solid var(--border);
@@ -354,7 +354,7 @@
           <p>Det här är det viktigaste. Använd det du har lärt dig på egen hand. Bygg något för vardagen eller för jobbet, även om det är litet. Det <b>ska</b> vara litet i början.</p>
           <p>Kommer du inte på något, klistra in prompten nedan i Claude eller ChatGPT. Den ställer några frågor till dig och föreslår vad du ska automatisera.</p>
           <figure class="fig">
-            <img src="images/claude-prompt-bar.png" alt="Claudes textruta där du klistrar in prompten">
+            <img src="images/claude-prompt-bar.png?v=2" alt="Claudes textruta där du klistrar in prompten">
             <figcaption>Steg 3 · Klistra in i textrutan i Claude eller ChatGPT</figcaption>
           </figure>
           <div class="prompt">
