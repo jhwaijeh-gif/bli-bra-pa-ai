@@ -10,13 +10,13 @@
 <!-- Separator ar middot (·), aldrig tankstreck. Nagra aldre      -->
 <!-- live-guider har tankstreck i titeln: kopiera INTE det.       -->
 <!-- ============================================================ -->
-<title>Bli bra på AI på en helg · länkar och prompt | @joudgor</title>
+<title>Bli bra på AI på en helg · länkar, plan och prompt | @joudgor</title>
 
 <!-- ============================================================ -->
 <!-- SLOT:META_DESCRIPTION - 1-2 meningar på svenska om vad       -->
 <!-- läsaren får. Konkret, inga hype-ord, inga utropstecken.      -->
 <!-- ============================================================ -->
-<meta name="description" content="Tre saker som gör dig bra på AI på en helg: Anthropics guide med användningsfall, två gratiskurser och en prompt som föreslår vad du ska automatisera.">
+<meta name="description" content="En helgplan för att bli bra på AI utan att vara teknisk: Anthropics användningsfall för ditt yrke, två gratiskurser och en prompt på svenska som föreslår vad du ska automatisera.">
 
 <!-- ============================================================ -->
 <!-- SLOT:OG - og:title = kort variant av titeln,                 -->
@@ -24,7 +24,7 @@
 <!-- guiden har en bra hero-bild i repot.                         -->
 <!-- ============================================================ -->
 <meta property="og:title" content="Bli bra på AI på en helg">
-<meta property="og:description" content="Användningsfall, två gratiskurser och en prompt som föreslår vad du ska automatisera.">
+<meta property="og:description" content="Helgplan, exempel för ditt yrke, två gratiskurser och en prompt som föreslår vad du ska automatisera.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -213,6 +213,29 @@
   .feat h3{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--ink);margin:15px 0 8px;}
   .feat p{font-size:15.5px;color:var(--text);line-height:1.62;max-width:660px;}
   @media(max-width:820px){.feat{padding:26px 22px;}}
+
+  /* TIPS-GRID (patterns.md D) */
+  .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px;}
+  .tipcard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px;
+    transition:box-shadow .2s ease,transform .2s ease;}
+  .tipcard:hover{box-shadow:0 2px 12px rgba(0,0,0,0.05);transform:translateY(-2px);}
+  .tipcard .ti{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .tipcard .ti svg{width:20px;height:20px;}
+  .tipcard h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);letter-spacing:-0.01em;margin-bottom:8px;line-height:1.2;}
+  .tipcard p{font-size:14.5px;color:var(--text);line-height:1.58;}
+  .tipcard p b{color:var(--ink);font-weight:600;}
+  @media(max-width:820px){.tips{grid-template-columns:1fr;}}
+
+  /* YRKESKORT (samma kort som chatgpt-koder, som lankar) */
+  .roles{margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .role{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;
+    display:flex;flex-direction:column;gap:4px;text-decoration:none;transition:border-color .2s ease,transform .12s ease;}
+  .role:hover{border-color:var(--brand);transform:translateY(-1px);}
+  .role .rn{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--cloth-tx);}
+  .role .rt{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);line-height:1.25;}
+  .role .rt::after{content:" \2197";color:var(--brand);font-family:var(--sans);font-size:15px;}
+  .role .rd{font-size:14.5px;color:var(--text);line-height:1.5;}
+  @media(max-width:680px){ .roles{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -249,7 +272,7 @@
       <!-- SLOT:LEDE - 2-4 meningar. Vad läsaren får, konkret siffra    -->
       <!-- i <b> om det finns en. Inga utropstecken, inga hype-ord.     -->
       <!-- ============================================================ -->
-      <p class="lede reveal">Frågan jag får mest är hur man sätter igång, och om man måste vara teknisk. Det måste du inte. <b>Här är de tre sakerna, med alla länkar och prompten.</b> Ta dem i ordning.</p>
+      <p class="lede reveal">Frågan jag får mest är hur man sätter igång, och om man måste vara teknisk. Det måste du inte. <b>Här är helgplanen, alla länkar och prompten, på svenska och engelska.</b> Se vad AI kan göra i ditt jobb, lär dig hur det fungerar, och bygg en sak.</p>
 
       <!-- ============================================================ -->
       <!-- SLOT:PILLS - 2-4 korta metapiller: verktyg, tid, format.     -->
@@ -258,7 +281,7 @@
         <span>Claude</span>
         <span>Gratis</span>
         <span>3 steg</span>
-        <span>1 prompt</span>
+        <span>Prompt på svenska</span>
       </div>
 
       <!-- ============================================================ -->
@@ -299,10 +322,42 @@
   <!-- pattern-JS markt "add to <script>" laggs i scriptet nedan.    -->
   <!-- ============================================================ -->
 
-    <!-- STEG -->
+    <!-- HELGEN I KORTHET -->
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Helgen i korthet</h2>
+        <div class="sec-sub">Fyra pass, två dagar. Allt här är gratis, och det är steg 3 som gör skillnaden.</div>
+      </div>
+      <div class="tips">
+        <div class="tipcard reveal">
+          <div class="ti" style="background:var(--cloth-bg);color:var(--cloth-tx)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <h3>Lördag förmiddag</h3>
+          <p><b>Steg 1.</b> Se vad AI kan göra i just ditt jobb. Runt tio minuter, sedan fastnar du gärna längre.</p>
+        </div>
+        <div class="tipcard reveal">
+          <div class="ti" style="background:var(--blue-bg);color:var(--blue-tx)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"/></svg></div>
+          <h3>Lördag eftermiddag</h3>
+          <p><b>Steg 2, del ett.</b> Gratiskursen Claude 101.</p>
+        </div>
+        <div class="tipcard reveal">
+          <div class="ti" style="background:var(--yellow-bg);color:var(--yellow-tx)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Söndag förmiddag</h3>
+          <p><b>Steg 2, del två.</b> Gratiskursen AI Capabilities and Limitations.</p>
+        </div>
+        <div class="tipcard reveal">
+          <div class="ti" style="background:var(--green-bg);color:var(--green-tx)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.7 6.3 3 3L8 19H5v-3z"/><path d="m13 8 3 3"/></svg></div>
+          <h3>Söndag eftermiddag</h3>
+          <p><b>Steg 3.</b> Bygg en liten sak som faktiskt fungerar. Det är här du lär dig mest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEG -->
   <section class="wrap narrow" style="padding-top:8px;margin:0 auto;">
     <div class="sec-head reveal">
-      <h2>Tre saker, en helg</h2>
+      <h2>Tre steg</h2>
       <div class="sec-sub">Du behöver inte vara teknisk. Det enda du behöver är att sätta igång.</div>
     </div>
 
@@ -313,16 +368,19 @@
         <div class="step-n">1</div>
         <div>
           <h3>Se hur AI kan hjälpa dig i ditt jobb</h3>
-          <p>Det här tar runt tio minuter. Anthropic, företaget bakom Claude, har samlat exempel på hur man använder AI inom alla områden. Öppna <a href="https://academy.claude.com/use-cases" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600">Anthropics guide med användningsfall</a> och välj ditt område i raden med filter: sälj, data, marknadsföring, design, utbildning, juridik och fler.</p>
+          <p>Det här tar runt tio minuter. Anthropic, företaget bakom Claude, har samlat exempel på hur man använder AI inom alla områden, sorterade efter yrke. Varje exempel visar uppgiften, prompten att kopiera och resultatet Claude gav.</p>
+          <p>Börja med exemplet <a href="https://academy.claude.com/use-cases/explore-what-claude-can-do-for-you" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600">Explore what Claude can do for you</a>. Det är Anthropics eget startexempel: du berättar vad du jobbar med och får tillbaka fem saker att testa i ditt jobb, med prompter.</p>
           <figure class="fig">
             <img src="images/use-cases.jpg" alt="Anthropics sida Use cases med filtren General, Marketing, Product, Engineering, HR, Finance, Operations, Data, Design, Legal, Sales, Research, Education och Personal" loading="lazy">
             <figcaption>Steg 1 · Välj ditt område i filtren</figcaption>
           </figure>
-          <p>Varje exempel visar en uppgift från början till slut, med en färdig prompt du kan kopiera. När du ser vad som går att göra i ditt eget jobb blir du automatiskt sugen på att lära dig mer.</p>
+          <p>Sedan väljer du ditt område. Så här använder du ett exempel:</p>
+          <p><b>1.</b> Titta på exempelbilden högst upp. Den visar vad du får tillbaka.<br><b>2.</b> Tryck på <b>Copy prompt</b> och byt ut detaljerna mot dina egna.<br><b>3.</b> Kör prompten i Claude och jämför med exemplet.</p>
           <figure class="fig">
             <img src="images/use-case-exempel.jpg" alt="Ett användningsfall: Quickly prep for your week, med knapparna Try in Claude och Copy prompt" loading="lazy">
-            <figcaption>Steg 1 · Ett av exemplen, med en prompt att kopiera</figcaption>
+            <figcaption>Steg 1 · Copy prompt finns i varje exempel</figcaption>
           </figure>
+          <div class="note"><span class="lb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></span><span>Ju mer Claude vet om din vardag, desto bättre blir förslagen. Skriv <b>vad som tar mest tid i din vecka</b>, eller bifoga ett dokument från jobbet.</span></div>
         </div>
       </div>
 
@@ -331,18 +389,18 @@
         <div class="step-n">2</div>
         <div>
           <h3>Gå två gratiskurser</h3>
-          <p>Båda kurserna är gratis och ligger på Anthropics egen akademi.</p>
+          <p>Båda kurserna är gratis, ligger på Anthropics egen akademi och kräver ingen teknisk bakgrund.</p>
           <p><b>Den första är <a href="https://academy.claude.com/courses/claude-101" target="_blank" rel="noopener" style="color:var(--brand)">Claude 101</a>.</b> Den är enkel, men extremt bra. Du går från ditt första samtal och bra promptar till projekt, skills och kopplade verktyg.</p>
           <figure class="fig">
             <img src="images/kurs-claude-101.jpg" alt="Kurssidan Claude 101: Learn to use Claude for everyday work, from your first conversation and effective prompting to projects, artifacts, skills, and connected tools" loading="lazy">
             <figcaption>Steg 2 · Claude 101</figcaption>
           </figure>
-          <p><b>Den andra är <a href="https://academy.claude.com/courses/ai-capabilities-and-limitations" target="_blank" rel="noopener" style="color:var(--brand)">AI Capabilities and Limitations</a>.</b> Den lär dig hur AI fungerar, var den hämtar sina svar ifrån och hur du får ut det bästa resultatet ur den.</p>
+          <p><b>Den andra är <a href="https://academy.claude.com/courses/ai-capabilities-and-limitations" target="_blank" rel="noopener" style="color:var(--brand)">AI Capabilities and Limitations</a>.</b> Den lär dig hur AI fungerar, var den hämtar sina svar ifrån, varför den ibland har fel fast den låter säker, och hur du får ut det bästa resultatet ur den.</p>
           <figure class="fig">
             <img src="images/kurs-ai-capabilities.jpg" alt="Kurssidan AI capabilities and limitations: Build an accurate mental model of what large language models can and cannot do" loading="lazy">
             <figcaption>Steg 2 · AI Capabilities and Limitations</figcaption>
           </figure>
-          <div class="note blue"><span class="lb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span><span>Du kan starta kurserna utan konto. Loggar du in sparas var du är, så du kan fortsätta nästa dag.</span></div>
+          <div class="note blue"><span class="lb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span><span>Du kan starta kurserna utan konto. Loggar du in sparas var du är, så du kan fortsätta nästa dag, och du får ett märke när du är klar.</span></div>
         </div>
       </div>
 
@@ -351,28 +409,96 @@
         <div class="step-n">3</div>
         <div>
           <h3>Bygg något litet, på riktigt</h3>
-          <p>Det här är det viktigaste. Använd det du har lärt dig på egen hand. Bygg något för vardagen eller för jobbet, även om det är litet. Det <b>ska</b> vara litet i början.</p>
-          <p>Kommer du inte på något, klistra in prompten nedan i Claude eller ChatGPT. Den ställer några frågor till dig och föreslår vad du ska automatisera.</p>
+          <p>Det här är det viktigaste. Använd det du har lärt dig på egen hand. Välj något du gör varje dag eller varje vecka och låt AI göra det, även om det är litet. Det <b>ska</b> vara litet i början.</p>
+          <p>Kommer du inte på något, klistra in prompten nedan i Claude eller ChatGPT och skriv ditt yrke på första raden. Den ställer några frågor till dig och föreslår vad du ska automatisera.</p>
           <figure class="fig">
             <img src="images/claude-prompt-bar.png?v=2" alt="Claudes textruta där du klistrar in prompten">
             <figcaption>Steg 3 · Klistra in i textrutan i Claude eller ChatGPT</figcaption>
           </figure>
           <div class="prompt">
-            <div class="prompt-bar"><span class="lbl">Prompt · klistra in i Claude eller ChatGPT</span><button class="prompt-copy" type="button">Kopiera</button></div>
-            <pre>Help me find what I should automate with AI first. Ask me questions, one at a time, about my job, my week and the tasks I repeat. Ask 5 to 8 questions in total and adapt each question to my previous answer.
+            <div class="prompt-bar"><span class="lbl">Prompt på svenska · klistra in i Claude eller ChatGPT</span><button class="prompt-copy" type="button">Kopiera</button></div>
+            <pre>MITT YRKE: [skriv vad du jobbar med här]
 
-Then give me 5 concrete suggestions for things I can automate or speed up with AI, starting with the easiest. For each suggestion, tell me:
-- what it does
-- which tool I can use, for example Claude or ChatGPT
-- roughly how much time it could save me per week
-- the first step I can take today
+Hjälp mig hitta det i mitt jobb och mitt liv som är mest värt att automatisera med AI. Leta inte efter det som irriterar mig mest just nu, utan efter det som tar mest tid totalt: hur ofta jag gör det gånger hur lång tid det tar varje gång.
 
-Keep it simple, I am not technical. Talk to me in Swedish.</pre>
+Gör så här, en fråga i taget:
+
+1. Föreslå 5 uppgifter som någon med mitt yrke brukar göra om och om igen. Fråga hur ofta jag gör var och en och ungefär hur lång tid den tar. Ge färdiga svarsalternativ jag kan klicka på, plus "annat".
+
+2. Räkna ut ungefär hur många timmar per år varje uppgift tar. Visa de tre största, en rad var, och fråga vilken vi ska börja med.
+
+3. Be mig beskriva senaste gången jag gjorde just den uppgiften, steg för steg. Ge inga förslag förrän du har ett riktigt exempel.
+
+4. Ge mig 3 sätt att låta AI göra hela eller delar av uppgiften. För vart och ett: vad AI:n gör, vilket verktyg jag ska använda (helst ett jag redan har), ungefär hur mycket tid det sparar per gång och per år, och första steget jag kan ta i dag.
+
+5. Fråga vilket jag vill börja med och hjälp mig sätta upp det. Är det något som återkommer, visa hur det kan köras av sig självt.
+
+Om MITT YRKE är tomt, fråga först vad jag jobbar med. Var konkret och utgå från mig, inga allmänna råd. Skriv på svenska, kort och rakt.</pre>
           </div>
-          <div class="note"><span class="lb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></span><span>Välj <b>det enklaste förslaget</b> och gör klart det samma dag. En liten sak som faktiskt fungerar lär dig mer än en stor plan.</span></div>
+          <div class="prompt">
+            <div class="prompt-bar"><span class="lbl">Samma prompt på engelska</span><button class="prompt-copy" type="button">Kopiera</button></div>
+            <pre>MY JOB: [write what you do here]
+
+Help me find what in my work and my life is most worth automating with AI. Don't look for what annoys me the most right now. Look for what takes the most time in total: how often I do it times how long it takes each time.
+
+Work like this, one question at a time:
+
+1. Suggest 5 tasks that someone with my job usually does again and again. Ask how often I do each one and roughly how long it takes. Give me ready-made answer options I can click, plus "other".
+
+2. Calculate roughly how many hours per year each task takes. Show the top three, one line each, and ask which one we should start with.
+
+3. Ask me to describe the last time I did that task, step by step. Don't give any suggestions until you have a real example.
+
+4. Give me 3 ways to let AI do all or part of the task. For each one: what the AI does, which tool to use (preferably one I already have), roughly how much time it saves per time and per year, and the first step I can take today.
+
+5. Ask which one I want to start with and help me set it up. If it's something that repeats, show me how it can run on its own.
+
+If MY JOB is empty, first ask what I do. Be specific and start from me, no general advice. Keep it short and direct.</pre>
+          </div>
+          <div class="note"><span class="lb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></span><span><b>Därför fungerar prompten.</b> Den räknar total tid, inte hur jobbigt något kändes senast. En kvart varje arbetsdag blir ungefär 60 timmar på ett år. Och den kräver ett riktigt exempel innan den föreslår något, så du får förslag för ditt jobb i stället för en allmän lista.</span></div>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- PER YRKE -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Ett exempel att börja med, per yrke</h2>
+        <div class="sec-sub">Hittar du inte ditt område direkt, börja här. Varje kort öppnar ett exempel hos Anthropic.</div>
+      </div>
+      <div class="roles">
+        <a class="role reveal" href="https://academy.claude.com/use-cases/account-research-brief" target="_blank" rel="noopener"><span class="rn">Sälj</span><span class="rt">Account research</span><span class="rd">Läs på om ett företag inför mötet.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/build-customer-personas" target="_blank" rel="noopener"><span class="rn">Marknadsföring</span><span class="rt">Build customer personas</span><span class="rd">Ta fram vilka dina kunder är.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/understand-and-extend-an-inherited-spreadsheet" target="_blank" rel="noopener"><span class="rn">Ekonomi</span><span class="rt">Understand and extend an inherited spreadsheet</span><span class="rd">Förstå ett kalkylark någon annan byggt.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/interview-debrief" target="_blank" rel="noopener"><span class="rn">HR</span><span class="rt">Interview debrief synthesis</span><span class="rd">Sammanfatta intervjuer till ett beslut.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/meeting-notes-and-filed-tasks-from-a-call-transcript" target="_blank" rel="noopener"><span class="rn">Drift</span><span class="rt">Create meeting notes and tasks from a call transcript</span><span class="rd">Möte in, anteckningar och uppgifter ut.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/nda-review" target="_blank" rel="noopener"><span class="rn">Juridik</span><span class="rt">NDA triage at scale</span><span class="rd">Gå igenom sekretessavtal snabbare.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/adapt-a-standard-textbook-page-to-every-reading-level" target="_blank" rel="noopener"><span class="rn">Utbildning</span><span class="rt">Adapt a standard textbook page to every reading level</span><span class="rd">Samma text för varje elevs nivå.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/package-your-brand-guidelines-in-a-skill" target="_blank" rel="noopener"><span class="rn">Design</span><span class="rt">Package your brand guidelines in a skill</span><span class="rd">Lär Claude ditt varumärke en gång.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/pull-metrics-from-analytics-dashboards" target="_blank" rel="noopener"><span class="rn">Data</span><span class="rt">Pull metrics from analytics dashboards</span><span class="rd">Hämta siffrorna utan att klicka runt.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/feedback-synthesis" target="_blank" rel="noopener"><span class="rn">Produkt</span><span class="rt">Feedback synthesis to prioritized themes</span><span class="rd">Gör kundfeedback till en prioriterad lista.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/plan-your-literature-review" target="_blank" rel="noopener"><span class="rn">Forskning</span><span class="rt">Plan your literature review</span><span class="rd">Lägg upp en litteraturgenomgång.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/incident-postmortem" target="_blank" rel="noopener"><span class="rn">Utveckling</span><span class="rt">Draft the incident postmortem</span><span class="rd">Skriv efteranalysen efter ett driftstopp.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/organize-files-by-whats-in-them" target="_blank" rel="noopener"><span class="rn">Privat</span><span class="rt">Organize files across your desktop</span><span class="rd">Sortera filerna på datorn efter innehåll.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATERKOMMANDE -->
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Eller börja med något som återkommer</h2>
+        <div class="sec-sub">Tre exempel ur samma bibliotek som du sätter upp en gång och sedan har nytta av varje vecka.</div>
+      </div>
+      <div class="roles">
+        <a class="role reveal" href="https://academy.claude.com/use-cases/quickly-prep-for-your-week" target="_blank" rel="noopener"><span class="rn">Varje vecka</span><span class="rt">Quickly prep for your week</span><span class="rd">Går igenom kalendern och inkorgen och visar vilka möten som behöver förberedas.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/build-a-daily-briefing-across-your-tools" target="_blank" rel="noopener"><span class="rn">Varje dag</span><span class="rt">Build a daily briefing across your tools</span><span class="rd">Samlar det viktigaste från dina verktyg i en sammanfattning varje dag.</span></a>
+        <a class="role reveal" href="https://academy.claude.com/use-cases/meeting-prep-and-a-weekly-recap-in-your-dm-with-claude" target="_blank" rel="noopener"><span class="rn">Varje vecka</span><span class="rt">Meeting prep and a weekly recap in your DM with Claude</span><span class="rd">Förbereder dina möten och skickar en sammanfattning av veckan.</span></a>
+      </div>
     </div>
   </section>
 
@@ -381,8 +507,8 @@ Keep it simple, I am not technical. Talk to me in Swedish.</pre>
     <div class="wrap">
       <div class="feat reveal">
         <span class="ftag">Det viktigaste tipset</span>
-        <h3>Ta dig tiden</h3>
-        <p>Du vet redan hur viktig AI är. Sätt dig ner en helg, gå igenom de här tre stegen i ordning, och avsluta med något du har byggt själv. <b>Det är skillnaden mellan att ha läst om AI och att kunna använda det.</b></p>
+        <h3>En helg: se det, förstå det, bygg en sak</h3>
+        <p>Du vet redan hur viktig AI är. Sätt dig ner en helg, gå igenom stegen i ordning och avsluta med något du har byggt själv. <b>Det är skillnaden mellan att ha läst om AI och att kunna använda det.</b></p>
       </div>
     </div>
   </section>
